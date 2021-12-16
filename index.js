@@ -10,15 +10,11 @@ var rollbar = new Rollbar({
 })
 app.use(express.json())
 
-
-rollbar.log('Hello world!')
-
-
 app.use('/',express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
-    rollbar.info('html/css loaded successfully')
+    rollbar.info('html loaded successfully')
 })
 
 app.post('/api/color', (req, res) => {
