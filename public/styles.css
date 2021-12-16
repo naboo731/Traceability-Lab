@@ -1,3 +1,15 @@
 body {
-  background-color: aquamarine;
+  background-color: rgb(160, 229, 206);
+}
+
+#questions {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+#color-div {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
