@@ -8,6 +8,11 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+app.use(express.json())
+
+
+rollbar.log('Hello world!')
+
 
 app.use('/',express.static(path.join(__dirname, 'public')))
 
@@ -18,13 +23,10 @@ app.get('/', (req, res) => {
 
 app.post('/api/color', (req, res) => {
     let {color} = req.body
+
+    rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
     res.status(200).send(color)
 })
-
-
-
-
-
 
 
 
@@ -33,6 +35,7 @@ app.post('/api/color', (req, res) => {
 app.use(rollbar.errorHandler)
 
 const port = process.env.PORT || 4545
+
 app.listen(port, () => {
     console.log(`Are you there dad? On port ${port}`)
 })
