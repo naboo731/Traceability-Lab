@@ -23,7 +23,7 @@ app.post('/api/color', (req, res) => {
     colorArray.push(color)
 
     rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
-    res.status(200).send(color)
+    res.status(200).send(colorArray)
 })
 
 
