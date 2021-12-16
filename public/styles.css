@@ -2,6 +2,19 @@ body {
   background-color: rgb(160, 229, 206);
 }
 
+#main-header {
+  display: flex;
+  justify-content: center;
+}
+#header-2 {
+  display: flex;
+  justify-content: center;
+}
+#header3 {
+  display: flex;
+  justify-content: center;
+}
+
 #questions {
   display: flex;
   justify-content: flex-end;

@@ -17,15 +17,36 @@ app.get('/', (req, res) => {
     rollbar.info('html loaded successfully')
 })
 
-let colorArray = []
+
+app.post('/api/name', (req, res) => {
+    let {name} = req.body
+  
+    rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
+    res.status(200).send(name)
+})
+
+app.post('/api/birthday', (req, res) => {
+    let {birthday} = req.body
+
+    rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
+    res.status(200).send(birthday)
+})
+
 app.post('/api/color', (req, res) => {
     let {color} = req.body
     colorArray.push(color)
 
     rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
-    res.status(200).send(colorArray)
+    res.status(200).send(color)
 })
 
+app.post('/api/funfact', (req, res) => {
+    let {funFact} = req.body
+    colorArray.push(color)
+
+    rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
+    res.status(200).send(funFact)
+})
 
 
 
