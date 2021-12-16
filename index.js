@@ -17,9 +17,11 @@ app.get('/', (req, res) => {
     rollbar.info('html loaded successfully')
 })
 
+let colorArray = []
 app.post('/api/color', (req, res) => {
     let {color} = req.body
-
+    colorArray.push(color)
+    
     rollbar.log('color added successfully', {author: 'Nicki', type: 'manual entry'})
     res.status(200).send(color)
 })
