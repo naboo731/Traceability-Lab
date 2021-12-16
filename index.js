@@ -32,7 +32,7 @@ app.post('/api/color', (req, res) => {
 
 app.use(rollbar.errorHandler)
 
-const port = process.env.PORT || 4545
+const port = process.env.PORT || 4573
 
 app.listen(port, () => {
     console.log(`Are you there dad? On port ${port}`)
